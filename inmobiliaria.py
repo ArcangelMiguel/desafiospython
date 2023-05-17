@@ -41,6 +41,10 @@ while True:
             }
             lista_inmueble.append(propiedad)
             input('La Propiedad fue Registrada.  <<Presiones ENTER>>')
+        else:
+            print('La propiedad ingresada no se encuentra dentro de los parámetros aceptables.')
+            input('<<ENTER>>')
+
             
     if opcion==2:
         menu.encabezado()
@@ -78,3 +82,4 @@ while True:
         
         input("<<ENTER>>")
         
+
