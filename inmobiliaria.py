@@ -65,14 +65,16 @@ while True:
         monto=int(input('\tIngrese su presupuesto: '))
         
         prop_encontradas=[]
-        contador=0
+        contador=-1
         
         for p in lista_inmueble:
             if p['estado']=="Disponible" or p['estado']=="Reservado":
                 contador+=1
-                valor=funciones.calculaPrecio(p['anio'], p['metros'], p['habitaciones'], p['garaje'],p['zona'])
-                p['precio']=valor
+                valor=funciones.calculaPrecio(p['año'], p['metros'], p['habitaciones'], p['garaje'],p['zona'])
                 prop_encontradas.append(p)
-                print(prop_encontradas)
-        prop=int(input("Seleccione la propiedad a cambiar el estado:"))
+                prop_encontradas[contador]['precio']=valor
+        for p in prop_encontradas:
+            print(p)
+        
+        input("<<ENTER>>")
         
